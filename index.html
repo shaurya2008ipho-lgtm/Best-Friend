@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A hand-drawn thank-you letter for a best friend who always motivates me." />
+  <title>A Little Thank You — For You ♡</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="brand">A Special Thank You <span>♡</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#story">The Story</a>
+      <a href="#sketch">The Sketch</a>
+      <a href="#thanks">My Thanks</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal-on-scroll">
+        <p class="eyebrow">A little note from me to you</p>
+        <h1>Some people<br />just make life<br /><em>lighter…</em></h1>
+        <div class="scribble-line"></div>
+        <p class="hero-text">There are friends who don't just stand by you — they cheer for you, lift you up, and quietly remind you of your own strength when you forget it.</p>
+        <a class="paper-button" href="#sketch">Let me draw you →</a>
+      </div>
+
+      <div class="hero-letter reveal-on-scroll">
+        <div class="tape tape-b"></div>
+        <div class="hero-letter-inner">
+          <div class="little-star">✦</div>
+          <p class="hero-letter-script">A tiny sketch,<br />made especially<br />for you.</p>
+          <div class="mini-doodle-face" aria-hidden="true">
+            <span class="face-hair"></span>
+            <span class="face-eye eye-left"></span>
+            <span class="face-eye eye-right"></span>
+            <span class="face-smile"></span>
+            <span class="face-ear ear-left"></span>
+            <span class="face-ear ear-right"></span>
+          </div>
+          <p class="hero-letter-note">The little details matter —<br />especially the ones that make you smile. ♡</p>
+        </div>
+        <span class="doodle doodle-heart">♡</span>
+      </div>
+
+      <aside class="sticky-note reveal-on-scroll">
+        <div class="tape tape-b"></div>
+        <p>And this<br /><strong>is for you…</strong></p>
+        <span>✎</span>
+      </aside>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="section-label">01 / The reason</div>
+      <div class="story-grid">
+        <div class="story-card torn reveal-on-scroll">
+          <span class="card-icon">✦</span>
+          <h2>For the person who keeps saying, “You can do it.”</h2>
+          <p>Sometimes the biggest gift a person can give isn't an answer. It is that little push to try one more time.</p>
+          <p>You've done that for me more times than I can count.</p>
+          <div class="highlight">You make difficult days feel possible.</div>
+        </div>
+        <div class="doodle-page reveal-on-scroll" aria-label="Hand drawn doodles">
+          <svg viewBox="0 0 500 380" role="img" aria-hidden="true">
+            <path d="M90 300 C120 255 165 215 215 190 C255 170 310 165 360 180 C410 198 430 238 420 275" />
+            <path d="M100 305 C140 285 190 270 235 268 C290 265 345 278 390 298" />
+            <path d="M215 80 l18 34 38 5 -27 26 7 38 -36 -18 -36 18 7 -38 -27 -26 38 -5 z" />
+            <path d="M395 55 q30 20 0 50 q-30 -30 0 -50" />
+            <circle cx="415" cy="260" r="5" />
+            <circle cx="440" cy="285" r="3" />
+            <path d="M55 70 C80 40 110 40 135 70 C105 66 82 90 55 70" />
+          </svg>
+          <div class="tiny-handwriting">tiny reminders<br />of the good things</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sketch section" id="sketch">
+      <div class="section-label">02 / The sketch</div>
+      <div class="sketch-intro reveal-on-scroll">
+        <h2>Okay… let me try to draw you.</h2>
+        <p>Not just your face. Your smile, your expressions, your vibe — the little details that make you <em>you</em>.</p>
+      </div>
+
+      <div class="drawing-stage" id="drawingStage">
+        <div class="canvas-frame">
+          <div class="canvas-paper">
+            <div class="sketch-reveal" id="sketchReveal">
+              <img src="assets/portrait-sketch.jpg" alt="Hand-drawn portrait sketch" />
+            </div>
+            <svg class="sketch-lines" viewBox="0 0 640 720" preserveAspectRatio="none" aria-hidden="true">
+              <path class="line line-1" d="M85 610 C80 520 95 440 130 380 C160 325 215 285 275 260" />
+              <path class="line line-2" d="M275 260 C325 225 385 210 440 230 C500 252 540 305 555 370" />
+              <path class="line line-3" d="M555 370 C575 440 560 535 520 600" />
+              <path class="line line-4" d="M190 165 C245 115 350 92 435 130" />
+            </svg>
+            <div class="draw-shadow" id="drawShadow"></div>
+            <div class="drawing-hand" id="drawingHand" aria-hidden="true">
+              <div class="hand-palm"></div>
+              <div class="hand-finger f1"></div>
+              <div class="hand-finger f2"></div>
+              <div class="hand-finger f3"></div>
+              <div class="pencil"><span></span></div>
+            </div>
+            <div class="draw-caption" id="drawCaption">first strokes…</div>
+          </div>
+        </div>
+
+        <div class="drawing-controls">
+          <button class="paper-button" id="drawAgain">Draw it again ↻</button>
+          <div class="draw-progress"><span id="progressText">0%</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="thanks section" id="thanks">
+      <div class="section-label">03 / My thanks</div>
+      <div class="thanks-layout">
+        <div class="thanks-copy reveal-on-scroll">
+          <h2>Thank you… ♡</h2>
+          <p>For always believing in me.</p>
+          <p>For being my biggest cheerleader.</p>
+          <p>For motivating me when I needed it most.</p>
+          <p>And for reminding me that I can do better — even when I don't believe it myself.</p>
+          <div class="underlined-note">You're not just a friend…<br /><strong>you're a constant source of strength.</strong></div>
+        </div>
+
+        <div class="portrait-final reveal-on-scroll">
+          <div class="sparkle sparkle-1">✧</div>
+          <div class="sparkle sparkle-2">✦</div>
+          <img src="assets/portrait-sketch.jpg" alt="Final cheerful hand-drawn portrait" />
+        </div>
+
+        <div class="closing-card reveal-on-scroll">
+          <div class="tape tape-c"></div>
+          <p class="closing-big">This sketch is for the person who inspires me to keep going…</p>
+          <p>Thank you for being you. ♡</p>
+          <div class="mini-sun">☼</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale section">
+      <div class="finale-inner reveal-on-scroll">
+        <p class="eyebrow">one last thing</p>
+        <h2 class="final-message">You are a champion. Always keep faith in yourself and you will do wonders in your life. I am always there to support and motivate you.. I promise to be always there forever just as you have been for me..</h2>
+        <div class="mountains">/\  /\    /\  /\</div>
+        <p class="signature">Forever grateful — me ♡</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with paper, pixels &amp; a lot of gratitude.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
