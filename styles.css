@@ -62,3 +62,7 @@ footer{padding:32px 6vw;text-align:center;background:#cfc09f;font:23px 'Caveat',
 .final-message{font-size:clamp(38px,4.2vw,66px)!important;line-height:1.12!important;max-width:1080px;margin:24px auto 34px!important;}
 @media (max-width:900px){.final-message{font-size:42px!important;line-height:1.15!important;}}
 @media (max-width:600px){.final-message{font-size:34px!important;line-height:1.2!important;}}
+
+
+/* Audio is intentionally invisible; the site keeps its original scrapbook layout. */
+#backgroundMusic { display: none; }

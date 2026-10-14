@@ -93,3 +93,53 @@ window.addEventListener('pointermove', e => {
     el.style.transform = `translate(${x*(8+i*2)}px, ${y*(6+i*1.5)}px) rotate(${i%2?4:-3}deg)`;
   });
 });
+
+
+// Discreet background music. Attempt autoplay on page load; if the browser blocks
+// audible autoplay, retry on the visitor's first click/tap/key press. No player UI is shown.
+const backgroundMusic = document.getElementById('backgroundMusic');
+const OPENING_STANZA_SECONDS = 60;
+let musicStarted = false;
+let stoppedAtOpeningEnd = false;
+
+function removeMusicGestureFallbacks() {
+  document.removeEventListener('pointerdown', startMusicFromGesture, true);
+  document.removeEventListener('click', startMusicFromGesture, true);
+  document.removeEventListener('keydown', startMusicFromGesture, true);
+}
+
+function startMusicFromGesture() {
+  if (!backgroundMusic || musicStarted) return;
+  // Calling play() directly within this event gives the browser a valid user gesture.
+  const playback = backgroundMusic.play();
+  if (playback && typeof playback.then === 'function') {
+    playback.then(() => {
+      musicStarted = true;
+      removeMusicGestureFallbacks();
+    }).catch(() => {
+      // The audio file may be missing or playback may remain disallowed.
+      // Keep the page itself unaffected and allow later gestures to retry.
+    });
+  } else {
+    musicStarted = true;
+    removeMusicGestureFallbacks();
+  }
+}
+
+if (backgroundMusic) {
+  backgroundMusic.addEventListener('timeupdate', () => {
+    if (!stoppedAtOpeningEnd && backgroundMusic.currentTime >= OPENING_STANZA_SECONDS) {
+      stoppedAtOpeningEnd = true;
+      backgroundMusic.pause();
+      backgroundMusic.currentTime = OPENING_STANZA_SECONDS;
+    }
+  });
+
+  // Browsers may block audible autoplay. The fallback has no visible overlay or button.
+  document.addEventListener('pointerdown', startMusicFromGesture, true);
+  document.addEventListener('click', startMusicFromGesture, true);
+  document.addEventListener('keydown', startMusicFromGesture, true);
+
+  // Best effort: play immediately when the page loads.
+  startMusicFromGesture();
+}
