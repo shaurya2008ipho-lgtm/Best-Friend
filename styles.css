@@ -64,5 +64,32 @@ footer{padding:32px 6vw;text-align:center;background:#cfc09f;font:23px 'Caveat',
 @media (max-width:600px){.final-message{font-size:34px!important;line-height:1.2!important;}}
 
 
-/* Audio is intentionally invisible; the site keeps its original scrapbook layout. */
-#backgroundMusic { display: none; }
+
+/* Friendship Journal homepage feature */
+.journal-nav-link{display:inline-flex;align-items:center;gap:7px!important}
+.nav-new-badge,.release-badge{display:inline-flex;align-items:center;justify-content:center;background:#c7533e;color:#fff7ec;font:800 10px/1 'Nunito',sans-serif;letter-spacing:1.1px;padding:6px 8px;border-radius:5px;box-shadow:0 2px 0 rgba(90,28,18,.18);transform:rotate(-5deg)}
+.journal-callout{min-height:0;padding-top:90px;padding-bottom:96px;background:radial-gradient(circle at 12% 25%,rgba(219,183,128,.24),transparent 32%),linear-gradient(135deg,#e9ddc6,#f7edda 52%,#e2d1b4)}
+.journal-callout:after{opacity:.35}
+.journal-callout-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:7vw;align-items:center}
+.journal-callout-copy{max-width:620px}
+.journal-release-line{display:flex;align-items:center;gap:10px;color:#8e513e;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.release-sparkle{font-size:20px;color:#bb7b3d}
+.release-badge{font-size:11px;padding:8px 10px;animation:new-badge-glow 2.7s ease-in-out infinite}
+.journal-callout-copy h2{font-size:clamp(58px,7vw,90px);margin:14px 0 18px;color:#302a23}
+.journal-callout-copy h2 em{font-weight:400;color:#946348}
+.journal-callout-copy>p:not(.eyebrow){max-width:490px;font-size:18px;line-height:1.8;color:#5f5346}
+.journal-open-button{display:inline-flex;align-items:center;gap:18px;margin-top:18px;padding:15px 22px;background:#33352e;color:#fff5e6;text-decoration:none;border-radius:4px;box-shadow:5px 5px 0 #ccb392;font-weight:800;transition:transform .2s,box-shadow .2s}
+.journal-open-button:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #ccb392}
+.journal-paper-preview{position:relative;min-height:380px;max-width:360px;width:100%;justify-self:center;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#fbf2df,#ead6b4);color:#514438;box-shadow:0 22px 50px rgba(67,48,28,.17);transform:rotate(3deg);border:1px solid rgba(89,64,37,.14);overflow:visible}
+.journal-paper-preview:before{content:"";position:absolute;inset:14px;border:1px dashed rgba(94,71,46,.26);pointer-events:none}
+.preview-tape{position:absolute;top:-14px;left:36%;width:105px;height:27px;background:rgba(195,158,112,.65);transform:rotate(-7deg);box-shadow:0 2px 4px #7a624222}
+.preview-number{font:700 14px 'Nunito',sans-serif;letter-spacing:4px;color:#b88752}
+.preview-script{font:46px/.94 'Caveat',cursive;text-align:center;margin-top:16px;transform:rotate(-4deg)}
+.preview-line{width:58%;height:1px;background:#bca282;margin:26px auto}
+.preview-star{position:absolute;top:34px;right:34px;font-size:30px;color:#ad7e45}
+.preview-heart{font:48px 'Caveat',cursive;color:#ad6f61;transform:rotate(10deg)}
+.preview-caption{position:absolute;bottom:35px;left:0;right:0;text-align:center;font:20px 'Caveat',cursive;color:#75614b}
+@keyframes new-badge-glow{0%,100%{box-shadow:0 2px 0 rgba(90,28,18,.18),0 0 0 rgba(199,83,62,0)}50%{box-shadow:0 2px 0 rgba(90,28,18,.18),0 0 15px rgba(199,83,62,.25)}}
+@media(max-width:980px){.journal-nav-link{gap:5px!important}.journal-callout-inner{grid-template-columns:1fr 300px;gap:35px}.journal-paper-preview{min-height:330px}}
+@media(max-width:760px){.site-header nav{display:none}.journal-callout{padding:84px 24px}.journal-callout-inner{grid-template-columns:1fr;gap:52px}.journal-callout-copy h2{font-size:64px}.journal-paper-preview{min-height:320px;width:min(100%,330px);grid-row:1}.journal-release-line{flex-wrap:wrap}.journal-open-button{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.release-badge{animation:none}}
